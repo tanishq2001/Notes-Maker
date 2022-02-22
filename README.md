@@ -39,7 +39,7 @@ Javascript, Bootstrap, HTML, CSS
 ![First time user](https://github.com/tanishq2001/Notes-Maker/blob/master/public/First%20Sign%20up.jpg)
 
 
-### - Login after Signup page
+### - Login after Signup
 
 ![Signup page](https://github.com/tanishq2001/Notes-Maker/blob/master/public/After%20Signup%20login.jpg)
 
