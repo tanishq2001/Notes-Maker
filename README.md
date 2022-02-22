@@ -12,3 +12,6 @@ Javascript, Bootstrap, HTML, CSS
 - Built a dashboard showing the user profile and all personal data created notes where you can update or delete them.
 - Users can sign-up and log-in into the system. The user information and their Data is stored in MongoDB.
 - Once logged in, each subsequent request will include JSON web tokens, allowing the user to access authorized routes.
+
+## Demo images
+
