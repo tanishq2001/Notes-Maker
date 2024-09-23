@@ -21,7 +21,7 @@ const Navbar = ({ setPage }) => {
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
             }
-        }, 100);
+        }, 0.0001);
     };
 
     return (

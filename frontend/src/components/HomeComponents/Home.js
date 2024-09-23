@@ -3,13 +3,23 @@ import Contents from './Contents.js';
 import Data from '../../Data.js';
 
 const Home = () => {
-    
-    const contentData = Data
+    const contentData = Data;
+
     return (
         <div>
-            {contentData.map((item, index) => (
-                <Contents key={index} title={item.type} data={item.data} />
-            ))}
+            <div id="questionPapers">
+                {contentData.filter(item => item.type === "Past Year Papers").map((item, index) => (
+                    <Contents key={index} title={item.type} data={item.data} />
+                ))}
+            </div>
+            <div id="notes">
+                {contentData.filter(item => item.type === "Notes").map((item, index) => (
+                    <Contents key={index} title={item.type} data={item.data} />
+                ))}
+            </div>
+            <div id="feedback">
+                {/* Feedback Section Here */}
+            </div>
         </div>
     );
 };
