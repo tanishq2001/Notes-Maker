@@ -1,27 +1,27 @@
 import './App.css';
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
-import AddNote from './components/AddNote';
-import ShowNotes from './components/ShowNotes';
+import Home from './components/Home'; // Import your Home component
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Profile from './components/Profile';
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  
+  const [pageXOffset, setPage] = useState("profile");
 
-  const handleAddNote = (note) => {
-      setNotes([...notes, note]);
-  };
   return (
     <div>
-      <Navbar />
+      {/* Pass pageXOffset and setPage as props */}
+      <Navbar pageXOffset={pageXOffset} setPage={setPage} />
+
       <div className="container my-3">
-        <h1>Welcome To Magic Notes</h1>
-        <AddNote onAddNote={handleAddNote} />
-        <hr />
-        <h1>Your Notes</h1>
-        <hr />
-        <ShowNotes notes={notes} />
-        <ShowNotes notes={notes} />
+        {pageXOffset === "home" ? (
+          <div>
+            <Home />
+          </div>
+        ) : (
+          <Profile />
+        )}
       </div>
     </div>
   );

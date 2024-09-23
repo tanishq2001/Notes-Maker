@@ -1,11 +1,11 @@
-// src/components/Navbar.js
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
-const Navbar = () => {
+const Navbar = ({ setPage }) => {
     const token = localStorage.getItem('tokened');
 
     if (token === null) {
-        window.location.replace("../login.html");
+        window.location.replace("/login");
     }
 
     return (
@@ -20,25 +20,29 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="home.html">Home</a>
+                            {/* Using Button with onClick to setPage */}
+                            <Button variant="primary" onClick={() => setPage("home")}>Home</Button>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link active" href="home.html#part-one-main-id">Question Papers</a>
+                            <Button variant="secondary" onClick={() => setPage("question-papers")}>Question Papers</Button>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link active" href="home.html#part-two-main-id">Notes</a>
+                            <Button variant="secondary" onClick={() => setPage("notes")}>Notes</Button>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link active" href="home.html#feedback-id">Feedback</a>
+                            <Button variant="secondary" onClick={() => setPage("feedback")}>Feedback</Button>
                         </li>
                     </ul>
                     <div className="dropdown">
-                        <a className="btn btn-default dropdown-toggle" role="button" id="menu1" data-toggle="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="../user-removebg-preview.png" width="50px" height="auto" className="img-fluid" />
+                        <a className="btn btn-default dropdown-toggle" role="button" id="menu1" data-toggle="dropdown" aria-expanded="false">
+                            <img src="/assets/user.png" width="50px" height="auto" className="img-fluid" alt="User" />
                         </a>
                         <ul className="dropdown-menu text-align-left" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a className="dropdown-item" href="index.html">My Profile</a></li>
-                            <li><button className="dropdown-item" id="logof">Logout</button></li>
+                            <li><a className="dropdown-item" href="/profile">My Profile</a></li>
+                            <li><button className="dropdown-item" onClick={() => {
+                                localStorage.removeItem('tokened');
+                                window.location.replace("/login");
+                            }}>Logout</button></li>
                         </ul>
                     </div>
                 </div>
