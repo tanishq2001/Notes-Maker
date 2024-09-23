@@ -2,6 +2,19 @@
   text-align: center;
 }
 
+.nav-link {
+  color: white; /* Change text color */
+}
+
+.nav-link:hover {
+  color: #ffcc00; /* Change hover color */
+  text-decoration: underline; /* Optional underline effect on hover */
+}
+
+.nav-link.active {
+  font-weight: bold; /* Make active link bold */
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
