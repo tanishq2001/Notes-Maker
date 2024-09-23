@@ -11,7 +11,7 @@ const Navbar = ({ setPage }) => {
 
     const handleLogout = () => {
         localStorage.removeItem('tokened'); // Clear the token
-        Window.location.replace("/login"); // Redirect to login page
+        // Window.location.replace("/login"); // Redirect to login page
     };
 
     const handleNavigation = (section) => {
@@ -37,6 +37,7 @@ const Navbar = ({ setPage }) => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <Nav className="me-auto mb-2 mb-lg-0">
+                        <Nav.Link className="text-white" onClick={() => setPage("home")}>Home</Nav.Link>
                         <Nav.Link className="text-white" onClick={() => handleNavigation("questionPapers")}>Question Papers</Nav.Link>
                         <Nav.Link className="text-white" onClick={() => handleNavigation("notes")}>Notes</Nav.Link>
                         <Nav.Link className="text-white" onClick={() => handleNavigation("feedback")}>Feedback</Nav.Link>
