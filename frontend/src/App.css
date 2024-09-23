@@ -1,6 +1,14 @@
 .App {
   text-align: center;
 }
+.navbar {
+  z-index: 1000; /* Ensure the navbar is above other content */
+}
+
+.dropdown-menu {
+  min-width: 200px; /* Set a minimum width for dropdown */
+}
+
 
 .nav-link {
   color: white; /* Change text color */

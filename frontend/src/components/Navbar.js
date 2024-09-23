@@ -5,13 +5,9 @@ import '../App.css';
 const Navbar = ({ setPage }) => {
     const token = localStorage.getItem('tokened');
 
-    if (token === null) {
-        // window.location.replace("/login");
-    }
-
     const handleLogout = () => {
         localStorage.removeItem('tokened'); // Clear the token
-        // Window.location.replace("/login"); // Redirect to login page
+        // window.location.replace("/login"); // Uncomment to redirect to login page
     };
 
     const handleNavigation = (section) => {
@@ -21,7 +17,7 @@ const Navbar = ({ setPage }) => {
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
             }
-        }, 0.0001);
+        }, 100);
     };
 
     return (
@@ -29,7 +25,7 @@ const Navbar = ({ setPage }) => {
             <div className="container-fluid">
                 <Nav className="me-auto mb-2 mb-lg-0">
                     <Nav.Link className="text-white" onClick={() => setPage("profile")}>
-                        <h1>Notes Maker</h1>    
+                        <h1 className="navbar-brand">Notes Maker</h1>
                     </Nav.Link>
                 </Nav>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,13 +33,12 @@ const Navbar = ({ setPage }) => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <Nav className="me-auto mb-2 mb-lg-0">
-                        <Nav.Link className="text-white" onClick={() => setPage("home")}>Home</Nav.Link>
                         <Nav.Link className="text-white" onClick={() => handleNavigation("questionPapers")}>Question Papers</Nav.Link>
                         <Nav.Link className="text-white" onClick={() => handleNavigation("notes")}>Notes</Nav.Link>
                         <Nav.Link className="text-white" onClick={() => handleNavigation("feedback")}>Feedback</Nav.Link>
                         <Nav.Link className="text-white" onClick={() => setPage("profile")}>Profile</Nav.Link>
                     </Nav>
-                    <Dropdown>
+                    <Dropdown align="end">
                         <Dropdown.Toggle variant="link" id="dropdown-basic">
                             <img src="./logo192.png" width="50px" height="auto" className="img-fluid" alt="User" />
                         </Dropdown.Toggle>
