@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Home from './components/HomeComponents/Home'; // Import your Home component
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Profile from './components/ProfileComponents/Profile';
-import Navbar from './components/Navbar';
+import MyNavbar from './components/MyNavbar';
 
 function App() {
   
@@ -12,7 +12,7 @@ function App() {
   return (
     <div>
       {/* Pass pageXOffset and setPage as props */}
-      <Navbar pageXOffset={pageXOffset} setPage={setPage} />
+      <MyNavbar pageXOffset={pageXOffset} setPage={setPage} />
 
       <div className="container my-3">
         {pageXOffset === "home" ? (

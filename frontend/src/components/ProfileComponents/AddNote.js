@@ -1,29 +1,54 @@
-// src/components/AddNote.js
 import React, { useState } from 'react';
 
 const AddNote = ({ onAddNote }) => {
     const [title, setTitle] = useState('');
-    const [content, setContent] = useState('');
+    const [text, setText] = useState('');
 
     const handleAddNote = () => {
-        onAddNote({ title, content });
+        if (title.trim() === '' || text.trim() === '') {
+            alert('Title and Note cannot be empty!');
+            return;
+        }
+        
+        const newNote = {
+            title: title,
+            text: text
+        };
+
+        onAddNote(newNote);  // Send the new note to the parent component
+
+        // Reset input fields
         setTitle('');
-        setContent('');
+        setText('');
     };
 
     return (
-        <div className="card my-3">
+        <div className="card">
             <div className="card-body">
                 <div className="mb-3">
                     <h5 className="card-title">Add Title</h5>
-                    <input type="text" className="form-control" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Enter title" />
+                    <input 
+                        type="text" 
+                        className="form-control" 
+                        placeholder="Enter title" 
+                        value={title} 
+                        onChange={(e) => setTitle(e.target.value)} 
+                    />
                 </div>
+
                 <h5 className="card-title">Add a note</h5>
                 <div className="form-group">
-                    <textarea className="form-control" value={content} onChange={(e) => setContent(e.target.value)} rows="3"></textarea>
+                    <textarea 
+                        className="form-control" 
+                        rows="3" 
+                        value={text} 
+                        onChange={(e) => setText(e.target.value)} 
+                    />
                 </div>
                 <br />
-                <button className="btn btn-primary" onClick={handleAddNote}>Add Note</button>
+                <button className="btn btn-primary" onClick={handleAddNote}>
+                    Add Note
+                </button>
             </div>
         </div>
     );
