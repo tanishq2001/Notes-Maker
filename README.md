@@ -5,7 +5,7 @@ Note-maker is a Full stack web application which allow every user(student) to ma
 ## Tech Stack
 
 Node.js, MongoDB, Express.
-Javascript, Bootstrap, HTML, CSS
+React, Javascript, Bootstrap,
 
 ## Features
 - Portal where every student(user) can access their academic notes as well as store their personal notes.
