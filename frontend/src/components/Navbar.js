@@ -1,12 +1,13 @@
 import React from 'react';
 import { Nav, Dropdown } from 'react-bootstrap';
-import '../App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const Navbar = ({ setPage }) => {
-    const token = localStorage.getItem('tokened');
+    // const token = localStorage.getItem('tokened');
 
     const handleLogout = () => {
-        localStorage.removeItem('tokened'); // Clear the token
+        // localStorage.removeItem('tokened'); // Clear the token
         // window.location.replace("/login"); // Uncomment to redirect to login page
     };
 
